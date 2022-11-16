@@ -1,0 +1,43 @@
+
+
+// ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩  ⇩
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+let n = 7
+// DO NOT ALTER THE TEXT BETWEEN THESE LINES =========={M{E{R{L{I{N{1}N}I}L}R}E}M}=====================================
+// ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧  ⇧
+
+
+// Add your code below:
+
+func recursion(from target: Int) -> String{
+    if target > 2{
+        let origin = "Calculating fibonacci(\(String(target)))...\n"
+        return origin + "\(recursion(from:target - 1))"
+    }
+    else{
+        return "Calculating fibonacci(\(String(target)))..."
+    }
+}
+func calculation(int: Int) -> Int{
+    var n1 = 0
+    var n2 = 1
+    var result = 0
+    for _ in 0..<int{
+        result = n1
+        n1 = n2
+        n2 = result + n2
+    }
+    return n1
+}
+func fibonacci(_ n: Int){
+    if n == 1{
+        print("Terminal case, returning 1.")
+    }
+    else{
+        fibonacci(n-1)
+        print("Calculation fibonacci\(String(n))")
+        print("Non-terminal case, returning \(String(calculation(int: n))).") 
+    }
+}
+print(recursion(from: n))
+fibonacci(n)
